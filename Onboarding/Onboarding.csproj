@@ -1,0 +1,1945 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D348902-E9CD-4E4B-BAFB-DC1B40C97072}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Onboarding</RootNamespace>
+    <AssemblyName>Onboarding</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Carbon.Data.Protection, Version=0.19.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Carbon.Data.Protection.0.19.1\lib\netstandard2.0\Carbon.Data.Protection.dll</HintPath>
+    </Reference>
+    <Reference Include="Carbon.Json, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Carbon.Json.1.9.0\lib\netstandard2.0\Carbon.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Carbon.Packaging, Version=1.28.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Carbon.Packaging.1.28.0\lib\netstandard2.0\Carbon.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Carbon.Storage, Version=1.16.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Carbon.Storage.1.16.0\lib\netstandard2.0\Carbon.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Carbon.VersionControl, Version=1.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Carbon.VersionControl.1.8.1\lib\netstandard2.0\Carbon.VersionControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Carbon.Versioning, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Carbon.Versioning.1.5.0\lib\netstandard2.0\Carbon.Versioning.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GitHub, Version=1.13.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GitHub.1.13.1\lib\netstandard2.0\GitHub.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.1\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Site.css" />
+    <Content Include="Global.asax" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\react\CustomerIndex.jsx" />
+    <Content Include="Scripts\react\Customers\CustomerCreate.jsx" />
+    <Content Include="Scripts\react\Customers\CustomerDelete.jsx" />
+    <Content Include="Scripts\react\Customers\CustomerUpdate.jsx" />
+    <Content Include="Scripts\react\Customers\ListOfCustomers.jsx" />
+    <Content Include="Scripts\react\dist\Customers.bundle.js" />
+    <Content Include="Scripts\react\dist\Products.bundle.js" />
+    <Content Include="Scripts\react\dist\ProductSolds.bundle.js" />
+    <Content Include="Scripts\react\dist\Sales.bundle.js" />
+    <Content Include="Scripts\react\dist\Stores.bundle.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Confirm\Confirm.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Confirm\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\MountNode\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\MountNode\lib\computeClassNames.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\MountNode\lib\computeClassNamesDifference.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\MountNode\lib\getNodeFromProps.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\MountNode\lib\handleClassNamesChange.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\MountNode\lib\NodeRegistry.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\MountNode\MountNode.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Pagination\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Pagination\Pagination.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Pagination\PaginationItem.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Portal\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Portal\Portal.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Portal\PortalInner.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Radio\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Radio\Radio.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Ref\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Ref\Ref.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Responsive\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Responsive\Responsive.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Select\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Select\Select.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\TextArea\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\TextArea\TextArea.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\TransitionablePortal\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\TransitionablePortal\TransitionablePortal.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\behaviors\Visibility\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\behaviors\Visibility\Visibility.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Breadcrumb\Breadcrumb.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Breadcrumb\BreadcrumbDivider.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Breadcrumb\BreadcrumbSection.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Breadcrumb\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\Form.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormButton.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormCheckbox.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormDropdown.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormField.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormInput.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormRadio.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormSelect.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormTextArea.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Grid\Grid.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Grid\GridColumn.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Grid\GridRow.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Grid\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Menu\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Menu\Menu.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Menu\MenuHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Menu\MenuItem.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Menu\MenuMenu.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Message\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Message\Message.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Message\MessageContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Message\MessageHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Message\MessageItem.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Message\MessageList.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Table\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Table\Table.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Table\TableBody.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Table\TableCell.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Table\TableFooter.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Table\TableHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Table\TableHeaderCell.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Table\TableRow.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Button\Button.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Button\ButtonContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Button\ButtonGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Button\ButtonOr.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Button\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Container\Container.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Container\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Divider\Divider.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Divider\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Flag\Flag.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Flag\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Header\Header.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Header\HeaderContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Header\HeaderSubheader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Header\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Icon\Icon.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Icon\IconGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Icon\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Image\Image.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Image\ImageGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Image\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Input\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Input\Input.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Label\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Label\Label.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Label\LabelDetail.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Label\LabelGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\List\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\List\List.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\List\ListContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\List\ListDescription.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\List\ListHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\List\ListIcon.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\List\ListItem.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\List\ListList.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Loader\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Loader\Loader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Placeholder\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Placeholder\Placeholder.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Placeholder\PlaceholderHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Placeholder\PlaceholderImage.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Placeholder\PlaceholderLine.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Placeholder\PlaceholderParagraph.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Rail\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Rail\Rail.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Reveal\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Reveal\Reveal.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Reveal\RevealContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Segment\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Segment\Segment.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Segment\SegmentGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Segment\SegmentInline.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Step\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Step\Step.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Step\StepContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Step\StepDescription.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Step\StepGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Step\StepTitle.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\AutoControlledComponent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\childMapping.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\childrenUtils.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\classNameBuilders.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\createPaginationItems\createPaginationItems.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\createPaginationItems\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\createPaginationItems\itemFactories.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\createPaginationItems\paginationUtils.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\createPaginationItems\rangeFactories.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\createPaginationItems\suffixFactories.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\customPropTypes.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\debug.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\doesNodeContainClick.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\eventStack\EventPool.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\eventStack\EventSet.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\eventStack\EventStack.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\eventStack\EventTarget.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\eventStack\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\eventStack\normalizeHandlers.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\eventStack\normalizeTarget.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\factories.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\getElementType.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\getUnhandledProps.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\htmlPropsUtils.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\isBrowser.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\leven.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\normalizeOffset.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\normalizeTransitionDuration.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\numberToWord.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\objectDiff.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\shallowEqual.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\lib\SUI.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Accordion\Accordion.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Accordion\AccordionAccordion.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Accordion\AccordionContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Accordion\AccordionPanel.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Accordion\AccordionTitle.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Accordion\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Checkbox\Checkbox.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Checkbox\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dimmer\Dimmer.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dimmer\DimmerDimmable.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dimmer\DimmerInner.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dimmer\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dropdown\Dropdown.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dropdown\DropdownDivider.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dropdown\DropdownHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dropdown\DropdownItem.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dropdown\DropdownMenu.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dropdown\DropdownSearchInput.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dropdown\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Embed\Embed.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Embed\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Modal\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Modal\Modal.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Modal\ModalActions.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Modal\ModalContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Modal\ModalDescription.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Modal\ModalHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Popup\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Popup\Popup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Popup\PopupContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Popup\PopupHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Progress\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Progress\Progress.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Rating\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Rating\Rating.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Rating\RatingIcon.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Search\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Search\Search.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Search\SearchCategory.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Search\SearchResult.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Search\SearchResults.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Sidebar\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Sidebar\Sidebar.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Sidebar\SidebarPushable.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Sidebar\SidebarPusher.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Sticky\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Sticky\Sticky.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Tab\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Tab\Tab.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Tab\TabPane.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Transition\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Transition\Transition.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Transition\TransitionGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\umd.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Advertisement\Advertisement.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Advertisement\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Card\Card.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Card\CardContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Card\CardDescription.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Card\CardGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Card\CardHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Card\CardMeta.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Card\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\Comment.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\CommentAction.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\CommentActions.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\CommentAuthor.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\CommentAvatar.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\CommentContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\CommentGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\CommentMetadata.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\CommentText.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\Feed.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedDate.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedEvent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedExtra.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedLabel.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedLike.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedMeta.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedSummary.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedUser.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\Item.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\ItemContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\ItemDescription.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\ItemExtra.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\ItemGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\ItemHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\ItemImage.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\ItemMeta.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Statistic\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Statistic\Statistic.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Statistic\StatisticGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Statistic\StatisticLabel.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Statistic\StatisticValue.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\Confirm\Confirm.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\Confirm\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\MountNode\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\MountNode\lib\computeClassNames.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\MountNode\lib\computeClassNamesDifference.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\MountNode\lib\getNodeFromProps.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\MountNode\lib\handleClassNamesChange.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\MountNode\lib\NodeRegistry.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\MountNode\MountNode.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\Pagination\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\Pagination\Pagination.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\Pagination\PaginationItem.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\Portal\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\Portal\Portal.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\Portal\PortalInner.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\Radio\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\Radio\Radio.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\Ref\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\Ref\Ref.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\Responsive\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\Responsive\Responsive.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\Select\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\Select\Select.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\TextArea\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\TextArea\TextArea.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\TransitionablePortal\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\addons\TransitionablePortal\TransitionablePortal.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\behaviors\Visibility\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\behaviors\Visibility\Visibility.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Breadcrumb\Breadcrumb.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Breadcrumb\BreadcrumbDivider.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Breadcrumb\BreadcrumbSection.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Breadcrumb\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Form\Form.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Form\FormButton.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Form\FormCheckbox.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Form\FormDropdown.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Form\FormField.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Form\FormGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Form\FormInput.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Form\FormRadio.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Form\FormSelect.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Form\FormTextArea.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Form\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Grid\Grid.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Grid\GridColumn.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Grid\GridRow.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Grid\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Menu\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Menu\Menu.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Menu\MenuHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Menu\MenuItem.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Menu\MenuMenu.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Message\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Message\Message.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Message\MessageContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Message\MessageHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Message\MessageItem.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Message\MessageList.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Table\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Table\Table.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Table\TableBody.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Table\TableCell.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Table\TableFooter.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Table\TableHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Table\TableHeaderCell.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\collections\Table\TableRow.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Button\Button.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Button\ButtonContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Button\ButtonGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Button\ButtonOr.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Button\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Container\Container.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Container\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Divider\Divider.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Divider\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Flag\Flag.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Flag\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Header\Header.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Header\HeaderContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Header\HeaderSubheader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Header\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Icon\Icon.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Icon\IconGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Icon\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Image\Image.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Image\ImageGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Image\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Input\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Input\Input.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Label\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Label\Label.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Label\LabelDetail.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Label\LabelGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\List\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\List\List.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\List\ListContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\List\ListDescription.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\List\ListHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\List\ListIcon.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\List\ListItem.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\List\ListList.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Loader\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Loader\Loader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Placeholder\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Placeholder\Placeholder.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Placeholder\PlaceholderHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Placeholder\PlaceholderImage.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Placeholder\PlaceholderLine.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Placeholder\PlaceholderParagraph.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Rail\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Rail\Rail.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Reveal\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Reveal\Reveal.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Reveal\RevealContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Segment\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Segment\Segment.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Segment\SegmentGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Segment\SegmentInline.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Step\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Step\Step.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Step\StepContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Step\StepDescription.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Step\StepGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\elements\Step\StepTitle.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\AutoControlledComponent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\childMapping.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\childrenUtils.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\classNameBuilders.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\createPaginationItems\createPaginationItems.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\createPaginationItems\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\createPaginationItems\itemFactories.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\createPaginationItems\paginationUtils.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\createPaginationItems\rangeFactories.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\createPaginationItems\suffixFactories.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\customPropTypes.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\debug.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\doesNodeContainClick.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\eventStack\EventPool.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\eventStack\EventSet.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\eventStack\EventStack.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\eventStack\EventTarget.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\eventStack\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\eventStack\normalizeHandlers.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\eventStack\normalizeTarget.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\factories.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\getElementType.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\getUnhandledProps.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\htmlPropsUtils.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\isBrowser.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\leven.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\normalizeOffset.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\normalizeTransitionDuration.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\numberToWord.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\objectDiff.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\shallowEqual.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\lib\SUI.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Accordion\Accordion.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Accordion\AccordionAccordion.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Accordion\AccordionContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Accordion\AccordionPanel.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Accordion\AccordionTitle.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Accordion\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Checkbox\Checkbox.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Checkbox\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Dimmer\Dimmer.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Dimmer\DimmerDimmable.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Dimmer\DimmerInner.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Dimmer\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Dropdown\Dropdown.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Dropdown\DropdownDivider.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Dropdown\DropdownHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Dropdown\DropdownItem.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Dropdown\DropdownMenu.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Dropdown\DropdownSearchInput.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Dropdown\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Embed\Embed.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Embed\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Modal\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Modal\Modal.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Modal\ModalActions.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Modal\ModalContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Modal\ModalDescription.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Modal\ModalHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Popup\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Popup\Popup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Popup\PopupContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Popup\PopupHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Progress\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Progress\Progress.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Rating\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Rating\Rating.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Rating\RatingIcon.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Search\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Search\Search.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Search\SearchCategory.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Search\SearchResult.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Search\SearchResults.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Sidebar\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Sidebar\Sidebar.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Sidebar\SidebarPushable.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Sidebar\SidebarPusher.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Sticky\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Sticky\Sticky.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Tab\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Tab\Tab.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Tab\TabPane.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Transition\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Transition\Transition.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\modules\Transition\TransitionGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\umd.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Advertisement\Advertisement.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Advertisement\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Card\Card.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Card\CardContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Card\CardDescription.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Card\CardGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Card\CardHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Card\CardMeta.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Card\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Comment\Comment.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Comment\CommentAction.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Comment\CommentActions.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Comment\CommentAuthor.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Comment\CommentAvatar.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Comment\CommentContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Comment\CommentGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Comment\CommentMetadata.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Comment\CommentText.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Comment\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Feed\Feed.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Feed\FeedContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Feed\FeedDate.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Feed\FeedEvent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Feed\FeedExtra.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Feed\FeedLabel.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Feed\FeedLike.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Feed\FeedMeta.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Feed\FeedSummary.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Feed\FeedUser.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Feed\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Item\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Item\Item.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Item\ItemContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Item\ItemDescription.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Item\ItemExtra.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Item\ItemGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Item\ItemHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Item\ItemImage.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Item\ItemMeta.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Statistic\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Statistic\Statistic.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Statistic\StatisticGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Statistic\StatisticLabel.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\es\views\Statistic\StatisticValue.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\dist\umd\semantic-ui-react.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Confirm\Confirm.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Confirm\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\MountNode\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\MountNode\lib\computeClassNames.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\MountNode\lib\computeClassNamesDifference.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\MountNode\lib\getNodeFromProps.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\MountNode\lib\handleClassNamesChange.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\MountNode\lib\NodeRegistry.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\MountNode\MountNode.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Pagination\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Pagination\Pagination.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Pagination\PaginationItem.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Portal\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Portal\Portal.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Portal\PortalInner.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Radio\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Radio\Radio.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Ref\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Ref\Ref.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Responsive\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Responsive\Responsive.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Select\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Select\Select.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\TextArea\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\TextArea\TextArea.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\TransitionablePortal\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\addons\TransitionablePortal\TransitionablePortal.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\behaviors\Visibility\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\behaviors\Visibility\Visibility.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Breadcrumb\Breadcrumb.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Breadcrumb\BreadcrumbDivider.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Breadcrumb\BreadcrumbSection.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Breadcrumb\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\Form.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormButton.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormCheckbox.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormDropdown.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormField.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormInput.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormRadio.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormSelect.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormTextArea.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Grid\Grid.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Grid\GridColumn.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Grid\GridRow.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Grid\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Menu\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Menu\Menu.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Menu\MenuHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Menu\MenuItem.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Menu\MenuMenu.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Message\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Message\Message.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Message\MessageContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Message\MessageHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Message\MessageItem.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Message\MessageList.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Table\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Table\Table.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Table\TableBody.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Table\TableCell.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Table\TableFooter.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Table\TableHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Table\TableHeaderCell.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Table\TableRow.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Button\Button.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Button\ButtonContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Button\ButtonGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Button\ButtonOr.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Button\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Container\Container.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Container\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Divider\Divider.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Divider\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Flag\Flag.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Flag\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Header\Header.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Header\HeaderContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Header\HeaderSubheader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Header\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Icon\Icon.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Icon\IconGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Icon\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Image\Image.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Image\ImageGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Image\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Input\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Input\Input.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Label\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Label\Label.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Label\LabelDetail.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Label\LabelGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\List\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\List\List.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\List\ListContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\List\ListDescription.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\List\ListHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\List\ListIcon.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\List\ListItem.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\List\ListList.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Loader\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Loader\Loader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Placeholder\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Placeholder\Placeholder.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Placeholder\PlaceholderHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Placeholder\PlaceholderImage.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Placeholder\PlaceholderLine.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Placeholder\PlaceholderParagraph.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Rail\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Rail\Rail.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Reveal\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Reveal\Reveal.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Reveal\RevealContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Segment\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Segment\Segment.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Segment\SegmentGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Segment\SegmentInline.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Step\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Step\Step.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Step\StepContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Step\StepDescription.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Step\StepGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Step\StepTitle.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\AutoControlledComponent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\childMapping.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\childrenUtils.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\classNameBuilders.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\createPaginationItems\createPaginationItems.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\createPaginationItems\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\createPaginationItems\itemFactories.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\createPaginationItems\paginationUtils.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\createPaginationItems\rangeFactories.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\createPaginationItems\suffixFactories.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\customPropTypes.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\debug.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\doesNodeContainClick.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\eventStack\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\factories.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\getElementType.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\getUnhandledProps.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\htmlPropsUtils.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\isBrowser.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\leven.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\normalizeOffset.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\normalizeTransitionDuration.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\numberToWord.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\objectDiff.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\shallowEqual.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\SUI.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Accordion\Accordion.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Accordion\AccordionAccordion.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Accordion\AccordionContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Accordion\AccordionPanel.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Accordion\AccordionTitle.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Accordion\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Checkbox\Checkbox.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Checkbox\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dimmer\Dimmer.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dimmer\DimmerDimmable.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dimmer\DimmerInner.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dimmer\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dropdown\Dropdown.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dropdown\DropdownDivider.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dropdown\DropdownHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dropdown\DropdownItem.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dropdown\DropdownMenu.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dropdown\DropdownSearchInput.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dropdown\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Embed\Embed.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Embed\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Modal\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Modal\Modal.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Modal\ModalActions.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Modal\ModalContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Modal\ModalDescription.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Modal\ModalHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Popup\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Popup\Popup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Popup\PopupContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Popup\PopupHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Progress\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Progress\Progress.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Rating\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Rating\Rating.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Rating\RatingIcon.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Search\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Search\Search.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Search\SearchCategory.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Search\SearchResult.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Search\SearchResults.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Sidebar\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Sidebar\Sidebar.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Sidebar\SidebarPushable.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Sidebar\SidebarPusher.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Sticky\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Sticky\Sticky.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Tab\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Tab\Tab.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Tab\TabPane.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Transition\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Transition\Transition.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Transition\TransitionGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\umd.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Advertisement\Advertisement.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Advertisement\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Card\Card.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Card\CardContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Card\CardDescription.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Card\CardGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Card\CardHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Card\CardMeta.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Card\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\Comment.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\CommentAction.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\CommentActions.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\CommentAuthor.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\CommentAvatar.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\CommentContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\CommentGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\CommentMetadata.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\CommentText.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\Feed.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedDate.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedEvent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedExtra.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedLabel.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedLike.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedMeta.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedSummary.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedUser.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\Item.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\ItemContent.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\ItemDescription.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\ItemExtra.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\ItemGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\ItemHeader.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\ItemImage.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\ItemMeta.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Statistic\index.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Statistic\Statistic.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Statistic\StatisticGroup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Statistic\StatisticLabel.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\views\Statistic\StatisticValue.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\accordion.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\accordion.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\accordion.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\accordion.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\ad.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\ad.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\api.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\api.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\breadcrumb.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\breadcrumb.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\button.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\button.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\card.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\card.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\checkbox.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\checkbox.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\checkbox.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\checkbox.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\comment.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\comment.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\container.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\container.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\dimmer.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\dimmer.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\dimmer.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\dimmer.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\divider.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\divider.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\dropdown.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\dropdown.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\dropdown.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\dropdown.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\embed.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\embed.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\embed.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\embed.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\feed.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\feed.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\flag.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\flag.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\form.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\form.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\form.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\form.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\grid.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\grid.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\header.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\header.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\icon.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\icon.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\image.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\image.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\input.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\input.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\item.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\item.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\label.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\label.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\list.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\list.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\loader.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\loader.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\menu.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\menu.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\message.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\message.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\modal.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\modal.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\modal.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\modal.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\nag.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\nag.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\nag.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\nag.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\placeholder.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\placeholder.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\popup.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\popup.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\popup.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\popup.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\progress.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\progress.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\progress.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\progress.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\rail.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\rail.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\rating.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\rating.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\rating.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\rating.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\reset.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\reset.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\reveal.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\reveal.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\search.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\search.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\search.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\search.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\segment.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\segment.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\shape.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\shape.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\shape.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\shape.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\sidebar.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\sidebar.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\sidebar.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\sidebar.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\site.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\site.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\site.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\site.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\statistic.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\statistic.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\step.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\step.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\sticky.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\sticky.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\sticky.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\sticky.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\tab.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\tab.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\tab.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\tab.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\table.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\table.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\transition.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\transition.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\transition.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\transition.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\video.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\video.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\video.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\video.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\visibility.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\components\visibility.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\semantic.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\semantic.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\semantic.min.css" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\semantic.min.js" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\basic\assets\fonts\icons.svg" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\default\assets\fonts\brand-icons.svg" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\default\assets\fonts\icons.svg" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\default\assets\fonts\outline-icons.svg" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\default\assets\images\flags.png" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\github\assets\fonts\octicons.svg" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\material\assets\fonts\icons.svg" />
+    <Content Include="Scripts\react\ProductIndex.jsx" />
+    <Content Include="Scripts\react\Products\ListOfProducts.jsx" />
+    <Content Include="Scripts\react\Products\ProductCreate.jsx" />
+    <Content Include="Scripts\react\Products\ProductDelete.jsx" />
+    <Content Include="Scripts\react\Products\ProductUpdate.jsx" />
+    <Content Include="Scripts\react\SaleIndex.jsx" />
+    <Content Include="Scripts\react\Sales\ListOfSales.jsx" />
+    <Content Include="Scripts\react\Sales\SaleCreate.jsx" />
+    <Content Include="Scripts\react\Sales\SaleDelete.jsx" />
+    <Content Include="Scripts\react\Sales\SaleUpdate.jsx" />
+    <Content Include="Scripts\react\StoreIndex.jsx" />
+    <Content Include="Scripts\react\Stores\ListOfStores.jsx" />
+    <Content Include="Scripts\react\Stores\StoreCreate.jsx" />
+    <Content Include="Scripts\react\Stores\StoreDelete.jsx" />
+    <Content Include="Scripts\react\Stores\StoreUpdate.jsx" />
+    <Content Include="Scripts\react\webpack.config.js" />
+    <Content Include="semantic\less\fonts\icons.svg" />
+    <Content Include="semantic\less\images\loader-large-inverted.gif" />
+    <Content Include="semantic\less\images\loader-large.gif" />
+    <Content Include="semantic\less\images\loader-medium-inverted.gif" />
+    <Content Include="semantic\less\images\loader-medium.gif" />
+    <Content Include="semantic\less\images\loader-mini-inverted.gif" />
+    <Content Include="semantic\less\images\loader-mini.gif" />
+    <Content Include="semantic\less\images\loader-small-inverted.gif" />
+    <Content Include="semantic\less\images\loader-small.gif" />
+    <Content Include="semantic\less\modules\accordion.js" />
+    <Content Include="semantic\less\modules\behavior\api.js" />
+    <Content Include="semantic\less\modules\behavior\colorize.js" />
+    <Content Include="semantic\less\modules\behavior\form.js" />
+    <Content Include="semantic\less\modules\behavior\state.js" />
+    <Content Include="semantic\less\modules\carousel.js" />
+    <Content Include="semantic\less\modules\chatroom.js" />
+    <Content Include="semantic\less\modules\checkbox.js" />
+    <Content Include="semantic\less\modules\dimmer.js" />
+    <Content Include="semantic\less\modules\dropdown.js" />
+    <Content Include="semantic\less\modules\modal.js" />
+    <Content Include="semantic\less\modules\nag.js" />
+    <Content Include="semantic\less\modules\popup.js" />
+    <Content Include="semantic\less\modules\rating.js" />
+    <Content Include="semantic\less\modules\search.js" />
+    <Content Include="semantic\less\modules\shape.js" />
+    <Content Include="semantic\less\modules\sidebar.js" />
+    <Content Include="semantic\less\modules\tab.js" />
+    <Content Include="semantic\less\modules\transition.js" />
+    <Content Include="semantic\less\modules\video.js" />
+    <Content Include="semantic\minified\collections\breadcrumb.min.css" />
+    <Content Include="semantic\minified\collections\form.min.css" />
+    <Content Include="semantic\minified\collections\grid.min.css" />
+    <Content Include="semantic\minified\collections\menu.min.css" />
+    <Content Include="semantic\minified\collections\message.min.css" />
+    <Content Include="semantic\minified\collections\table.min.css" />
+    <Content Include="semantic\minified\elements\button.min.css" />
+    <Content Include="semantic\minified\elements\divider.min.css" />
+    <Content Include="semantic\minified\elements\header.min.css" />
+    <Content Include="semantic\minified\elements\icon.min.css" />
+    <Content Include="semantic\minified\elements\image.min.css" />
+    <Content Include="semantic\minified\elements\input.min.css" />
+    <Content Include="semantic\minified\elements\label.min.css" />
+    <Content Include="semantic\minified\elements\loader.min.css" />
+    <Content Include="semantic\minified\elements\progress.min.css" />
+    <Content Include="semantic\minified\elements\segment.min.css" />
+    <Content Include="semantic\minified\elements\step.min.css" />
+    <Content Include="semantic\minified\fonts\icons.svg" />
+    <Content Include="semantic\minified\images\loader-large-inverted.gif" />
+    <Content Include="semantic\minified\images\loader-large.gif" />
+    <Content Include="semantic\minified\images\loader-medium-inverted.gif" />
+    <Content Include="semantic\minified\images\loader-medium.gif" />
+    <Content Include="semantic\minified\images\loader-mini-inverted.gif" />
+    <Content Include="semantic\minified\images\loader-mini.gif" />
+    <Content Include="semantic\minified\images\loader-small-inverted.gif" />
+    <Content Include="semantic\minified\images\loader-small.gif" />
+    <Content Include="semantic\minified\modules\accordion.js" />
+    <Content Include="semantic\minified\modules\accordion.min.css" />
+    <Content Include="semantic\minified\modules\accordion.min.js" />
+    <Content Include="semantic\minified\modules\behavior\api.js" />
+    <Content Include="semantic\minified\modules\behavior\api.min.js" />
+    <Content Include="semantic\minified\modules\behavior\colorize.js" />
+    <Content Include="semantic\minified\modules\behavior\colorize.min.js" />
+    <Content Include="semantic\minified\modules\behavior\form.js" />
+    <Content Include="semantic\minified\modules\behavior\form.min.js" />
+    <Content Include="semantic\minified\modules\behavior\state.js" />
+    <Content Include="semantic\minified\modules\behavior\state.min.js" />
+    <Content Include="semantic\minified\modules\carousel.js" />
+    <Content Include="semantic\minified\modules\carousel.min.css" />
+    <Content Include="semantic\minified\modules\carousel.min.js" />
+    <Content Include="semantic\minified\modules\chatroom.js" />
+    <Content Include="semantic\minified\modules\chatroom.min.css" />
+    <Content Include="semantic\minified\modules\chatroom.min.js" />
+    <Content Include="semantic\minified\modules\checkbox.js" />
+    <Content Include="semantic\minified\modules\checkbox.min.css" />
+    <Content Include="semantic\minified\modules\checkbox.min.js" />
+    <Content Include="semantic\minified\modules\dimmer.js" />
+    <Content Include="semantic\minified\modules\dimmer.min.css" />
+    <Content Include="semantic\minified\modules\dimmer.min.js" />
+    <Content Include="semantic\minified\modules\dropdown.js" />
+    <Content Include="semantic\minified\modules\dropdown.min.css" />
+    <Content Include="semantic\minified\modules\dropdown.min.js" />
+    <Content Include="semantic\minified\modules\extra.min.css" />
+    <Content Include="semantic\minified\modules\modal.js" />
+    <Content Include="semantic\minified\modules\modal.min.css" />
+    <Content Include="semantic\minified\modules\modal.min.js" />
+    <Content Include="semantic\minified\modules\nag.js" />
+    <Content Include="semantic\minified\modules\nag.min.css" />
+    <Content Include="semantic\minified\modules\nag.min.js" />
+    <Content Include="semantic\minified\modules\popup.js" />
+    <Content Include="semantic\minified\modules\popup.min.css" />
+    <Content Include="semantic\minified\modules\popup.min.js" />
+    <Content Include="semantic\minified\modules\rating.js" />
+    <Content Include="semantic\minified\modules\rating.min.css" />
+    <Content Include="semantic\minified\modules\rating.min.js" />
+    <Content Include="semantic\minified\modules\reveal.min.css" />
+    <Content Include="semantic\minified\modules\search.js" />
+    <Content Include="semantic\minified\modules\search.min.css" />
+    <Content Include="semantic\minified\modules\search.min.js" />
+    <Content Include="semantic\minified\modules\shape.js" />
+    <Content Include="semantic\minified\modules\shape.min.css" />
+    <Content Include="semantic\minified\modules\shape.min.js" />
+    <Content Include="semantic\minified\modules\sidebar.js" />
+    <Content Include="semantic\minified\modules\sidebar.min.css" />
+    <Content Include="semantic\minified\modules\sidebar.min.js" />
+    <Content Include="semantic\minified\modules\tab.js" />
+    <Content Include="semantic\minified\modules\tab.min.css" />
+    <Content Include="semantic\minified\modules\tab.min.js" />
+    <Content Include="semantic\minified\modules\transition.js" />
+    <Content Include="semantic\minified\modules\transition.min.css" />
+    <Content Include="semantic\minified\modules\transition.min.js" />
+    <Content Include="semantic\minified\modules\video.js" />
+    <Content Include="semantic\minified\modules\video.min.css" />
+    <Content Include="semantic\minified\modules\video.min.js" />
+    <Content Include="semantic\minified\views\comment.min.css" />
+    <Content Include="semantic\minified\views\feed.min.css" />
+    <Content Include="semantic\minified\views\item.min.css" />
+    <Content Include="semantic\minified\views\list.min.css" />
+    <Content Include="semantic\minified\views\sitemap.min.css" />
+    <Content Include="semantic\minified\views\statistic.min.css" />
+    <Content Include="semantic\packaged\css\semantic.min.css" />
+    <Content Include="semantic\packaged\fonts\icons.svg" />
+    <Content Include="semantic\packaged\images\loader-large-inverted.gif" />
+    <Content Include="semantic\packaged\images\loader-large.gif" />
+    <Content Include="semantic\packaged\images\loader-medium-inverted.gif" />
+    <Content Include="semantic\packaged\images\loader-medium.gif" />
+    <Content Include="semantic\packaged\images\loader-mini-inverted.gif" />
+    <Content Include="semantic\packaged\images\loader-mini.gif" />
+    <Content Include="semantic\packaged\images\loader-small-inverted.gif" />
+    <Content Include="semantic\packaged\images\loader-small.gif" />
+    <Content Include="semantic\packaged\javascript\semantic.min.js" />
+    <Content Include="semantic\uncompressed\collections\breadcrumb.css" />
+    <Content Include="semantic\uncompressed\collections\form.css" />
+    <Content Include="semantic\uncompressed\collections\grid.css" />
+    <Content Include="semantic\uncompressed\collections\menu.css" />
+    <Content Include="semantic\uncompressed\collections\message.css" />
+    <Content Include="semantic\uncompressed\collections\table.css" />
+    <Content Include="semantic\uncompressed\elements\button.css" />
+    <Content Include="semantic\uncompressed\elements\divider.css" />
+    <Content Include="semantic\uncompressed\elements\header.css" />
+    <Content Include="semantic\uncompressed\elements\icon.css" />
+    <Content Include="semantic\uncompressed\elements\image.css" />
+    <Content Include="semantic\uncompressed\elements\input.css" />
+    <Content Include="semantic\uncompressed\elements\label.css" />
+    <Content Include="semantic\uncompressed\elements\loader.css" />
+    <Content Include="semantic\uncompressed\elements\progress.css" />
+    <Content Include="semantic\uncompressed\elements\segment.css" />
+    <Content Include="semantic\uncompressed\elements\step.css" />
+    <Content Include="semantic\uncompressed\fonts\icons.svg" />
+    <Content Include="semantic\uncompressed\images\loader-large-inverted.gif" />
+    <Content Include="semantic\uncompressed\images\loader-large.gif" />
+    <Content Include="semantic\uncompressed\images\loader-medium-inverted.gif" />
+    <Content Include="semantic\uncompressed\images\loader-medium.gif" />
+    <Content Include="semantic\uncompressed\images\loader-mini-inverted.gif" />
+    <Content Include="semantic\uncompressed\images\loader-mini.gif" />
+    <Content Include="semantic\uncompressed\images\loader-small-inverted.gif" />
+    <Content Include="semantic\uncompressed\images\loader-small.gif" />
+    <Content Include="semantic\uncompressed\modules\accordion.css" />
+    <Content Include="semantic\uncompressed\modules\accordion.js" />
+    <Content Include="semantic\uncompressed\modules\behavior\api.js" />
+    <Content Include="semantic\uncompressed\modules\behavior\colorize.js" />
+    <Content Include="semantic\uncompressed\modules\behavior\form.js" />
+    <Content Include="semantic\uncompressed\modules\behavior\state.js" />
+    <Content Include="semantic\uncompressed\modules\carousel.css" />
+    <Content Include="semantic\uncompressed\modules\carousel.js" />
+    <Content Include="semantic\uncompressed\modules\chatroom.css" />
+    <Content Include="semantic\uncompressed\modules\chatroom.js" />
+    <Content Include="semantic\uncompressed\modules\checkbox.css" />
+    <Content Include="semantic\uncompressed\modules\checkbox.js" />
+    <Content Include="semantic\uncompressed\modules\dimmer.css" />
+    <Content Include="semantic\uncompressed\modules\dimmer.js" />
+    <Content Include="semantic\uncompressed\modules\dropdown.css" />
+    <Content Include="semantic\uncompressed\modules\dropdown.js" />
+    <Content Include="semantic\uncompressed\modules\extra.css" />
+    <Content Include="semantic\uncompressed\modules\modal.css" />
+    <Content Include="semantic\uncompressed\modules\modal.js" />
+    <Content Include="semantic\uncompressed\modules\nag.css" />
+    <Content Include="semantic\uncompressed\modules\nag.js" />
+    <Content Include="semantic\uncompressed\modules\popup.css" />
+    <Content Include="semantic\uncompressed\modules\popup.js" />
+    <Content Include="semantic\uncompressed\modules\rating.css" />
+    <Content Include="semantic\uncompressed\modules\rating.js" />
+    <Content Include="semantic\uncompressed\modules\reveal.css" />
+    <Content Include="semantic\uncompressed\modules\search.css" />
+    <Content Include="semantic\uncompressed\modules\search.js" />
+    <Content Include="semantic\uncompressed\modules\shape.css" />
+    <Content Include="semantic\uncompressed\modules\shape.js" />
+    <Content Include="semantic\uncompressed\modules\sidebar.css" />
+    <Content Include="semantic\uncompressed\modules\sidebar.js" />
+    <Content Include="semantic\uncompressed\modules\tab.css" />
+    <Content Include="semantic\uncompressed\modules\tab.js" />
+    <Content Include="semantic\uncompressed\modules\transition.css" />
+    <Content Include="semantic\uncompressed\modules\transition.js" />
+    <Content Include="semantic\uncompressed\modules\video.css" />
+    <Content Include="semantic\uncompressed\modules\video.js" />
+    <Content Include="semantic\uncompressed\views\comment.css" />
+    <Content Include="semantic\uncompressed\views\feed.css" />
+    <Content Include="semantic\uncompressed\views\item.css" />
+    <Content Include="semantic\uncompressed\views\list.css" />
+    <Content Include="semantic\uncompressed\views\sitemap.css" />
+    <Content Include="semantic\uncompressed\views\statistic.css" />
+    <Content Include="Web.config" />
+    <Content Include="Scripts\react\package-lock.json" />
+    <Content Include="Scripts\react\package.json" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\basic\assets\fonts\icons.eot" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\basic\assets\fonts\icons.ttf" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\basic\assets\fonts\icons.woff" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\default\assets\fonts\brand-icons.eot" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\default\assets\fonts\brand-icons.ttf" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\default\assets\fonts\brand-icons.woff" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\default\assets\fonts\brand-icons.woff2" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\default\assets\fonts\icons.eot" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\default\assets\fonts\icons.otf" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\default\assets\fonts\icons.ttf" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\default\assets\fonts\icons.woff" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\default\assets\fonts\icons.woff2" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\default\assets\fonts\outline-icons.eot" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\default\assets\fonts\outline-icons.ttf" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\default\assets\fonts\outline-icons.woff" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\default\assets\fonts\outline-icons.woff2" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\github\assets\fonts\octicons-local.ttf" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\github\assets\fonts\octicons.ttf" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\github\assets\fonts\octicons.woff" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\material\assets\fonts\icons.eot" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\material\assets\fonts\icons.ttf" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\material\assets\fonts\icons.woff" />
+    <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\material\assets\fonts\icons.woff2" />
+    <Content Include="semantic\uncompressed\fonts\icons.woff" />
+    <Content Include="semantic\uncompressed\fonts\icons.ttf" />
+    <Content Include="semantic\uncompressed\fonts\icons.eot" />
+    <Content Include="semantic\packaged\fonts\icons.woff" />
+    <Content Include="semantic\packaged\fonts\icons.ttf" />
+    <Content Include="semantic\packaged\fonts\icons.eot" />
+    <Content Include="semantic\minified\fonts\icons.woff" />
+    <Content Include="semantic\minified\fonts\icons.ttf" />
+    <Content Include="semantic\minified\fonts\icons.eot" />
+    <Content Include="semantic\less\views\statistic.less" />
+    <Content Include="semantic\less\views\sitemap.less" />
+    <Content Include="semantic\less\views\list.less" />
+    <Content Include="semantic\less\views\item.less" />
+    <Content Include="semantic\less\views\feed.less" />
+    <Content Include="semantic\less\views\comment.less" />
+    <Content Include="semantic\less\modules\video.less" />
+    <Content Include="semantic\less\modules\transition.less" />
+    <Content Include="semantic\less\modules\tab.less" />
+    <Content Include="semantic\less\modules\sidebar.less" />
+    <Content Include="semantic\less\modules\shape.less" />
+    <Content Include="semantic\less\modules\search.less" />
+    <Content Include="semantic\less\modules\reveal.less" />
+    <Content Include="semantic\less\modules\rating.less" />
+    <Content Include="semantic\less\modules\popup.less" />
+    <Content Include="semantic\less\modules\nag.less" />
+    <Content Include="semantic\less\modules\modal.less" />
+    <Content Include="semantic\less\modules\extra.transition.less" />
+    <Content Include="semantic\less\modules\dropdown.less" />
+    <Content Include="semantic\less\modules\dimmer.less" />
+    <Content Include="semantic\less\modules\checkbox.less" />
+    <Content Include="semantic\less\modules\chatroom.less" />
+    <Content Include="semantic\less\modules\carousel.less" />
+    <Content Include="semantic\less\modules\accordion.less" />
+    <Content Include="semantic\less\fonts\icons.woff" />
+    <Content Include="semantic\less\fonts\icons.ttf" />
+    <Content Include="semantic\less\fonts\icons.eot" />
+    <Content Include="semantic\less\elements\step.less" />
+    <Content Include="semantic\less\elements\segment.less" />
+    <Content Include="semantic\less\elements\progress.less" />
+    <Content Include="semantic\less\elements\loader.less" />
+    <Content Include="semantic\less\elements\label.less" />
+    <Content Include="semantic\less\elements\input.less" />
+    <Content Include="semantic\less\elements\image.less" />
+    <Content Include="semantic\less\elements\icon.less" />
+    <Content Include="semantic\less\elements\header.less" />
+    <Content Include="semantic\less\elements\divider.less" />
+    <Content Include="semantic\less\elements\button.less" />
+    <Content Include="semantic\less\collections\table.less" />
+    <Content Include="semantic\less\collections\message.less" />
+    <Content Include="semantic\less\collections\menu.less" />
+    <Content Include="semantic\less\collections\grid.less" />
+    <Content Include="semantic\less\collections\form.less" />
+    <Content Include="semantic\less\collections\breadcrumb.less" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\CHANGELOG.md" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\LICENSE.md" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\package.json" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\README.md" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\lib\eventStack\README.md" />
+    <Content Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dropdown\TODO.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
+    <Compile Include="Controllers\StoresController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812032331098_initial.cs" />
+    <Compile Include="Migrations\201812032331098_initial.Designer.cs">
+      <DependentUpon>201812032331098_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812032332452_Customer_Required.cs" />
+    <Compile Include="Migrations\201812032332452_Customer_Required.Designer.cs">
+      <DependentUpon>201812032332452_Customer_Required.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812032349029_newAnnotation.cs" />
+    <Compile Include="Migrations\201812032349029_newAnnotation.Designer.cs">
+      <DependentUpon>201812032349029_newAnnotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812042055308_product_annotations.cs" />
+    <Compile Include="Migrations\201812042055308_product_annotations.Designer.cs">
+      <DependentUpon>201812042055308_product_annotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812042118391_price_annotation.cs" />
+    <Compile Include="Migrations\201812042118391_price_annotation.Designer.cs">
+      <DependentUpon>201812042118391_price_annotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812042120177_price_annotation2.cs" />
+    <Compile Include="Migrations\201812042120177_price_annotation2.Designer.cs">
+      <DependentUpon>201812042120177_price_annotation2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812042130030_store_annotations.cs" />
+    <Compile Include="Migrations\201812042130030_store_annotations.Designer.cs">
+      <DependentUpon>201812042130030_store_annotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812042141066_sale_annotations.cs" />
+    <Compile Include="Migrations\201812042141066_sale_annotations.Designer.cs">
+      <DependentUpon>201812042141066_sale_annotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812042152528_required_custom_messge.cs" />
+    <Compile Include="Migrations\201812042152528_required_custom_messge.Designer.cs">
+      <DependentUpon>201812042152528_required_custom_messge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\context.cs" />
+    <Compile Include="Models\customer.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\sales.cs" />
+    <Compile Include="Models\store.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Stores\Index.cshtml" />
+    <Content Include="Views\ProductSolds\Index.cshtml" />
+    <Content Include="Views\Sales\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Confirm\Confirm.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Confirm\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\MountNode\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\MountNode\MountNode.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Pagination\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Pagination\Pagination.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Pagination\PaginationItem.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Portal\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Portal\Portal.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Portal\PortalInner.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Radio\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Radio\Radio.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Ref\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Ref\Ref.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Responsive\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Responsive\Responsive.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Select\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\Select\Select.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\TextArea\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\TextArea\TextArea.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\TransitionablePortal\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\addons\TransitionablePortal\TransitionablePortal.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\behaviors\Visibility\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\behaviors\Visibility\Visibility.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Breadcrumb\Breadcrumb.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Breadcrumb\BreadcrumbDivider.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Breadcrumb\BreadcrumbSection.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Breadcrumb\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\Form.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormButton.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormCheckbox.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormDropdown.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormField.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormInput.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormRadio.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormSelect.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\FormTextArea.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Form\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Grid\Grid.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Grid\GridColumn.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Grid\GridRow.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Grid\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Menu\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Menu\Menu.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Menu\MenuHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Menu\MenuItem.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Menu\MenuMenu.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Message\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Message\Message.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Message\MessageContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Message\MessageHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Message\MessageItem.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Message\MessageList.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Table\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Table\Table.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Table\TableBody.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Table\TableCell.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Table\TableFooter.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Table\TableHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Table\TableHeaderCell.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\collections\Table\TableRow.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Button\Button.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Button\ButtonContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Button\ButtonGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Button\ButtonOr.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Button\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Container\Container.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Container\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Divider\Divider.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Divider\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Flag\Flag.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Flag\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Header\Header.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Header\HeaderContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Header\HeaderSubheader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Header\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Icon\Icon.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Icon\IconGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Icon\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Image\Image.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Image\ImageGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Image\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Input\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Input\Input.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Label\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Label\Label.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Label\LabelDetail.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Label\LabelGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\List\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\List\List.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\List\ListContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\List\ListDescription.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\List\ListHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\List\ListIcon.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\List\ListItem.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\List\ListList.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Loader\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Loader\Loader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Placeholder\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Placeholder\Placeholder.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Placeholder\PlaceholderHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Placeholder\PlaceholderImage.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Placeholder\PlaceholderLine.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Placeholder\PlaceholderParagraph.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Rail\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Rail\Rail.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Reveal\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Reveal\Reveal.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Reveal\RevealContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Segment\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Segment\Segment.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Segment\SegmentGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Segment\SegmentInline.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Step\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Step\Step.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Step\StepContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Step\StepDescription.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Step\StepGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\elements\Step\StepTitle.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\generic.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Accordion\Accordion.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Accordion\AccordionAccordion.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Accordion\AccordionContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Accordion\AccordionPanel.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Accordion\AccordionTitle.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Accordion\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Checkbox\Checkbox.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Checkbox\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dimmer\Dimmer.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dimmer\DimmerDimmable.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dimmer\DimmerInner.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dimmer\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dropdown\Dropdown.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dropdown\DropdownDivider.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dropdown\DropdownHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dropdown\DropdownItem.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dropdown\DropdownMenu.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dropdown\DropdownSearchInput.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Dropdown\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Embed\Embed.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Embed\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Modal\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Modal\Modal.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Modal\ModalActions.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Modal\ModalContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Modal\ModalDescription.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Modal\ModalHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Popup\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Popup\Popup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Popup\PopupContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Popup\PopupHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Progress\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Progress\Progress.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Rating\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Rating\Rating.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Rating\RatingIcon.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Search\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Search\Search.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Search\SearchCategory.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Search\SearchResult.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Search\SearchResults.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Sidebar\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Sidebar\Sidebar.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Sidebar\SidebarPushable.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Sidebar\SidebarPusher.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Sticky\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Sticky\Sticky.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Tab\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Tab\Tab.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Tab\TabPane.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Transition\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Transition\Transition.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\modules\Transition\TransitionGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Advertisement\Advertisement.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Advertisement\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Card\Card.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Card\CardContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Card\CardDescription.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Card\CardGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Card\CardHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Card\CardMeta.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Card\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\Comment.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\CommentAction.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\CommentActions.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\CommentAuthor.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\CommentAvatar.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\CommentContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\CommentGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\CommentMetadata.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\CommentText.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Comment\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\Feed.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedDate.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedEvent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedExtra.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedLabel.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedLike.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedMeta.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedSummary.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\FeedUser.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Feed\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\Item.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\ItemContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\ItemDescription.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\ItemExtra.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\ItemGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\ItemHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\ItemImage.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Item\ItemMeta.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Statistic\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Statistic\Statistic.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Statistic\StatisticGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Statistic\StatisticLabel.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\dist\commonjs\views\Statistic\StatisticValue.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Confirm\Confirm.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Confirm\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\MountNode\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\MountNode\MountNode.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Pagination\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Pagination\Pagination.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Pagination\PaginationItem.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Portal\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Portal\Portal.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Portal\PortalInner.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Radio\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Radio\Radio.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Ref\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Ref\Ref.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Responsive\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Responsive\Responsive.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Select\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\Select\Select.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\TextArea\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\TextArea\TextArea.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\TransitionablePortal\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\addons\TransitionablePortal\TransitionablePortal.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\behaviors\Visibility\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\behaviors\Visibility\Visibility.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Breadcrumb\Breadcrumb.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Breadcrumb\BreadcrumbDivider.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Breadcrumb\BreadcrumbSection.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Breadcrumb\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\Form.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormButton.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormCheckbox.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormDropdown.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormField.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormInput.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormRadio.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormSelect.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\FormTextArea.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Form\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Grid\Grid.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Grid\GridColumn.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Grid\GridRow.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Grid\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Menu\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Menu\Menu.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Menu\MenuHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Menu\MenuItem.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Menu\MenuMenu.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Message\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Message\Message.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Message\MessageContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Message\MessageHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Message\MessageItem.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Message\MessageList.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Table\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Table\Table.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Table\TableBody.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Table\TableCell.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Table\TableFooter.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Table\TableHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Table\TableHeaderCell.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\collections\Table\TableRow.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Button\Button.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Button\ButtonContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Button\ButtonGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Button\ButtonOr.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Button\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Container\Container.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Container\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Divider\Divider.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Divider\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Flag\Flag.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Flag\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Header\Header.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Header\HeaderContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Header\HeaderSubheader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Header\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Icon\Icon.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Icon\IconGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Icon\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Image\Image.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Image\ImageGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Image\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Input\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Input\Input.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Label\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Label\Label.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Label\LabelDetail.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Label\LabelGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\List\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\List\List.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\List\ListContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\List\ListDescription.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\List\ListHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\List\ListIcon.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\List\ListItem.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\List\ListList.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Loader\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Loader\Loader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Placeholder\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Placeholder\Placeholder.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Placeholder\PlaceholderHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Placeholder\PlaceholderImage.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Placeholder\PlaceholderLine.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Placeholder\PlaceholderParagraph.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Rail\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Rail\Rail.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Reveal\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Reveal\Reveal.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Reveal\RevealContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Segment\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Segment\Segment.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Segment\SegmentGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Segment\SegmentInline.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Step\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Step\Step.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Step\StepContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Step\StepDescription.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Step\StepGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\elements\Step\StepTitle.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\generic.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Accordion\Accordion.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Accordion\AccordionAccordion.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Accordion\AccordionContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Accordion\AccordionPanel.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Accordion\AccordionTitle.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Accordion\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Checkbox\Checkbox.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Checkbox\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dimmer\Dimmer.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dimmer\DimmerDimmable.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dimmer\DimmerInner.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dimmer\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dropdown\Dropdown.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dropdown\DropdownDivider.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dropdown\DropdownHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dropdown\DropdownItem.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dropdown\DropdownMenu.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dropdown\DropdownSearchInput.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Dropdown\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Embed\Embed.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Embed\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Modal\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Modal\Modal.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Modal\ModalActions.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Modal\ModalContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Modal\ModalDescription.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Modal\ModalHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Popup\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Popup\Popup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Popup\PopupContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Popup\PopupHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Progress\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Progress\Progress.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Rating\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Rating\Rating.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Rating\RatingIcon.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Search\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Search\Search.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Search\SearchCategory.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Search\SearchResult.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Search\SearchResults.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Sidebar\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Sidebar\Sidebar.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Sidebar\SidebarPushable.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Sidebar\SidebarPusher.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Sticky\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Sticky\Sticky.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Tab\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Tab\Tab.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Tab\TabPane.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Transition\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Transition\Transition.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\modules\Transition\TransitionGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Advertisement\Advertisement.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Advertisement\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Card\Card.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Card\CardContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Card\CardDescription.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Card\CardGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Card\CardHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Card\CardMeta.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Card\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\Comment.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\CommentAction.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\CommentActions.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\CommentAuthor.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\CommentAvatar.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\CommentContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\CommentGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\CommentMetadata.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\CommentText.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Comment\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\Feed.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedDate.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedEvent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedExtra.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedLabel.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedLike.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedMeta.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedSummary.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\FeedUser.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Feed\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\Item.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\ItemContent.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\ItemDescription.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\ItemExtra.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\ItemGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\ItemHeader.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\ItemImage.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Item\ItemMeta.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Statistic\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Statistic\Statistic.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Statistic\StatisticGroup.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Statistic\StatisticLabel.d.ts" />
+    <TypeScriptCompile Include="Scripts\react\node_modules\semantic-ui-react\src\views\Statistic\StatisticValue.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812032331098_initial.resx">
+      <DependentUpon>201812032331098_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812032332452_Customer_Required.resx">
+      <DependentUpon>201812032332452_Customer_Required.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812032349029_newAnnotation.resx">
+      <DependentUpon>201812032349029_newAnnotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812042055308_product_annotations.resx">
+      <DependentUpon>201812042055308_product_annotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812042118391_price_annotation.resx">
+      <DependentUpon>201812042118391_price_annotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812042120177_price_annotation2.resx">
+      <DependentUpon>201812042120177_price_annotation2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812042130030_store_annotations.resx">
+      <DependentUpon>201812042130030_store_annotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812042141066_sale_annotations.resx">
+      <DependentUpon>201812042141066_sale_annotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812042152528_required_custom_messge.resx">
+      <DependentUpon>201812042152528_required_custom_messge.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50176</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50176/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
