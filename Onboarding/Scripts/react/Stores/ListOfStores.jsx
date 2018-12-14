@@ -35,12 +35,9 @@ export default class StoreTable extends Component {
         this.onUpdateSubmit = this.onUpdateSubmit.bind(this);
     }
 
-
-
     componentDidMount() {
         this.loadData();
     }
-
 
     closeDeleteModal() {
         this.setState({ showDeleteModal: false });
@@ -66,7 +63,6 @@ export default class StoreTable extends Component {
         });
     }
 
-
     onDeleteSubmit(id) {
         $.ajax({
             url: "/Stores/DeleteStore",
@@ -77,11 +73,8 @@ export default class StoreTable extends Component {
     }
 
     onCreateSubmit() {
-        console.log("create");
         if (true) {
-            console.log('Modal create', this.state.Name, this.state.Address);
             let data = { 'Name': this.state.Name, 'Address': this.state.Address }
-            console.log(data);
             $.ajax({
                 url: "/Stores/CreateStore",
                 type: "POST",
@@ -92,13 +85,10 @@ export default class StoreTable extends Component {
                         modelErrors = [...data];
                         let errors = {};
                         modelErrors.forEach(function (error, index) {
-                            console.log(index);
                             if (error.includes('Name')) {
-                                console.log(typeof error)
                                 errors['Name'] = error;
                             }
                             if (error.includes('Address')) {
-                                console.log(typeof error)
                                 errors['Address'] = error;
                             }
                         });
@@ -111,14 +101,12 @@ export default class StoreTable extends Component {
                         window.location.reload()
                     } }.bind(this)
             });
-            //window.location.reload()
         }
     }
 
     onUpdateSubmit() {
         if (true) {
             let data = { 'Name': this.state.Name, 'Address': this.state.Address, 'Id': this.state.Id };
-            console.log(data);
             $.ajax({
                 url: '/Stores/UpdateStore',
                 type: "POST",
@@ -129,13 +117,10 @@ export default class StoreTable extends Component {
                         modelErrors = [...data];
                         let errors = {};
                         modelErrors.forEach(function (error, index) {
-                            console.log(index);
                             if (error.includes('Name')) {
-                                console.log(typeof error)
                                 errors['Name'] = error;
                             }
                             if (error.includes('Address')) {
-                                console.log(typeof error)
                                 errors['Address'] = error;
                             }
                         });
@@ -148,7 +133,6 @@ export default class StoreTable extends Component {
                         window.location.reload()
                     } }.bind(this)
             });
-            //window.location.reload();
         }
 
     }
@@ -164,10 +148,8 @@ export default class StoreTable extends Component {
     }
 
     handleUpdate(id) {
-        console.log('Edit clicked', id);
         this.setState({ showUpdateteModal: true });
         this.setState({ updateId: id });
-        console.log("exit", this.state.updateId);
         $.ajax({
             url: "/Stores/GetStore",
             type: "GET",
@@ -176,12 +158,7 @@ export default class StoreTable extends Component {
                 this.setState({ Id: data.Id, Name: data.Name, Address: data.Address });
             }.bind(this)
         });
-
-
     }
-
-    
-
     render() {
         let list = this.state.StoreList;
         let tableData = null;
@@ -196,16 +173,11 @@ export default class StoreTable extends Component {
                     <td className="four wide">
                         <Button className="ui red button" onClick={this.handleDelete.bind(this, store.Id)}><i className="trash icon"></i>Delete</Button>
                     </td>
-
                 </tr>
-
             )
-
         }
         return (
-
             <React.Fragment>
-
                 <div className="ui one column grid">
                     <div className="row"></div>
                     <div className="row"></div> 
@@ -231,10 +203,7 @@ export default class StoreTable extends Component {
                         </table>
                     </div>
                 </div>
-
-
             </React.Fragment>
-
         )
     }
 }

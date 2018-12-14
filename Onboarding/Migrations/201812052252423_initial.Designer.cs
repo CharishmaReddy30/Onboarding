@@ -7,13 +7,13 @@ namespace Onboarding.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class price_annotation : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(price_annotation));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201812042118391_price_annotation"; }
+            get { return "201812052252423_initial"; }
         }
         
         string IMigrationMetadata.Source

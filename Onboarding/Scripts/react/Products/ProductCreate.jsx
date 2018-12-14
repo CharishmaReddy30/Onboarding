@@ -6,7 +6,6 @@ export default class ProductCreate extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
         };
     }
     render() {
@@ -19,18 +18,16 @@ export default class ProductCreate extends Component {
                             <i className="close icon"></i>
                             <div className="header">
                                 There were some errors with your submission
-  </div>
+                            </div>
                             <ul className="list">
                                 {this.props.errors.Name && <li>{this.props.errors.Name}</li>}
 
                             </ul>
                             <ul className="list">
                                 {this.props.errors.Price && <li>{this.props.errors.Price}</li>}
-
                             </ul>
                         </div>
                     }
-
                     <Modal.Content>
                         <Form size="small">
                             <Form.Group>
@@ -42,15 +39,12 @@ export default class ProductCreate extends Component {
                             </Form.Group>
                         </Form>
                     </Modal.Content>
-
-
                     <Modal.Actions>
                         <Button onClick={this.props.onClose} secondary >cancel</Button>
                         <Button onClick={this.props.onCreateSubmit} className="ui green button">create  <i className="check icon"></i></Button>
                     </Modal.Actions>
                 </Modal>
             </React.Fragment>
-
         )
     }
 }

@@ -1271,7 +1271,9 @@
     <Content Include="semantic\uncompressed\views\list.css" />
     <Content Include="semantic\uncompressed\views\sitemap.css" />
     <Content Include="semantic\uncompressed\views\statistic.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Scripts\react\package-lock.json" />
     <Content Include="Scripts\react\package.json" />
     <Content Include="Scripts\react\node_modules\semantic-ui\dist\themes\basic\assets\fonts\icons.eot" />
@@ -1366,41 +1368,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812032331098_initial.cs" />
-    <Compile Include="Migrations\201812032331098_initial.Designer.cs">
-      <DependentUpon>201812032331098_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812032332452_Customer_Required.cs" />
-    <Compile Include="Migrations\201812032332452_Customer_Required.Designer.cs">
-      <DependentUpon>201812032332452_Customer_Required.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812032349029_newAnnotation.cs" />
-    <Compile Include="Migrations\201812032349029_newAnnotation.Designer.cs">
-      <DependentUpon>201812032349029_newAnnotation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812042055308_product_annotations.cs" />
-    <Compile Include="Migrations\201812042055308_product_annotations.Designer.cs">
-      <DependentUpon>201812042055308_product_annotations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812042118391_price_annotation.cs" />
-    <Compile Include="Migrations\201812042118391_price_annotation.Designer.cs">
-      <DependentUpon>201812042118391_price_annotation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812042120177_price_annotation2.cs" />
-    <Compile Include="Migrations\201812042120177_price_annotation2.Designer.cs">
-      <DependentUpon>201812042120177_price_annotation2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812042130030_store_annotations.cs" />
-    <Compile Include="Migrations\201812042130030_store_annotations.Designer.cs">
-      <DependentUpon>201812042130030_store_annotations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812042141066_sale_annotations.cs" />
-    <Compile Include="Migrations\201812042141066_sale_annotations.Designer.cs">
-      <DependentUpon>201812042141066_sale_annotations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812042152528_required_custom_messge.cs" />
-    <Compile Include="Migrations\201812042152528_required_custom_messge.Designer.cs">
-      <DependentUpon>201812042152528_required_custom_messge.cs</DependentUpon>
+    <Compile Include="Migrations\201812052252423_initial.cs" />
+    <Compile Include="Migrations\201812052252423_initial.Designer.cs">
+      <DependentUpon>201812052252423_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\context.cs" />
@@ -1875,32 +1845,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812032331098_initial.resx">
-      <DependentUpon>201812032331098_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812032332452_Customer_Required.resx">
-      <DependentUpon>201812032332452_Customer_Required.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812032349029_newAnnotation.resx">
-      <DependentUpon>201812032349029_newAnnotation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812042055308_product_annotations.resx">
-      <DependentUpon>201812042055308_product_annotations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812042118391_price_annotation.resx">
-      <DependentUpon>201812042118391_price_annotation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812042120177_price_annotation2.resx">
-      <DependentUpon>201812042120177_price_annotation2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812042130030_store_annotations.resx">
-      <DependentUpon>201812042130030_store_annotations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812042141066_sale_annotations.resx">
-      <DependentUpon>201812042141066_sale_annotations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812042152528_required_custom_messge.resx">
-      <DependentUpon>201812042152528_required_custom_messge.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812052252423_initial.resx">
+      <DependentUpon>201812052252423_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -14,12 +14,13 @@ export default class SaleCreate extends Component {
         this.ProductsDropdown = this.ProductsDropdown.bind(this);
         this.StoresDropdown = this.StoresDropdown.bind(this);
     }
+
     componentDidMount() {
-        console.log('cre');
         this.CustomersDropdown();
         this.ProductsDropdown();
         this.StoresDropdown();
     }
+
     CustomersDropdown(){
     $.ajax({
         url: "/Customer/GetCustomers",
@@ -29,6 +30,7 @@ export default class SaleCreate extends Component {
         }.bind(this)
         })
     }
+
     ProductsDropdown() {
         $.ajax({
             url: "/Products/GetProducts",
@@ -36,14 +38,14 @@ export default class SaleCreate extends Component {
             success: function (data) { this.setState({ ProductDropdownList: data }); console.log(data) }.bind(this)
         });
     }
+
     StoresDropdown() {
         $.ajax({
             url: "/Stores/GetStores",
             type: "GET",
             success: function (data) { this.setState({ StoreDropdownList: data }) }.bind(this)
         });
-    }
-    
+    }    
 
     render() {
         let list = this.state.CustomerDropdownList;
@@ -66,7 +68,7 @@ export default class SaleCreate extends Component {
                             <i className="close icon"></i>
                             <div className="header">
                                 There were some errors with your submission
-  </div>
+                            </div>
                         <ul className="list">
                             {this.props.errors.Datesold && <li>{this.props.errors.Datesold}</li>}
 
@@ -91,13 +93,9 @@ export default class SaleCreate extends Component {
                         <Form size="small">
                             <Form.Group>
                                 <Form.Input label='Date sold' placeholder="dd/mm/yyyy"  onChange={this.props.onChange} name="DateSold" />
-
                             </Form.Group>
                             <Form.Group>
-
                                 <Dropdown placeholder='Select Customer' fluid selection options={Customertemp} onChange={this.props.onChange} name="CustomerId" />
-
-                                
                             </Form.Group>
                             <Form.Group>
                                 <Dropdown placeholder='Select Product' fluid selection options={Producttemp} name="ProductId" onChange={this.props.onChange}/>
@@ -105,12 +103,8 @@ export default class SaleCreate extends Component {
                             <Form.Group>
                                 <Dropdown placeholder='Select Store' fluid selection options={Storetemp} name="StoreId" onChange={this.props.onChange}/>
                             </Form.Group>
-                            
-                            
                         </Form>
                     </Modal.Content>
-
-                    
                     <Modal.Actions>
                         <Button onClick={this.props.onClose} secondary >cancel</Button>
                         <Button onClick={this.props.onCreateSubmit} className="ui green button">create  <i className="check icon"></i></Button>

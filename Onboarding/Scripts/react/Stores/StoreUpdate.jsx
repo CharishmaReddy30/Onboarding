@@ -6,11 +6,8 @@ export default class StoreUpdate extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
         };
-
     }
-
     render() {
         return (
             <React.Fragment>
@@ -21,14 +18,12 @@ export default class StoreUpdate extends Component {
                             <i className="close icon"></i>
                             <div className="header">
                                 There were some errors with your submission
-  </div>
+                            </div>
                             <ul className="list">
                                 {this.props.errors.Name && <li>{this.props.errors.Name}</li>}
-
                             </ul>
                             <ul className="list">
                                 {this.props.errors.Address && <li>{this.props.errors.Address}</li>}
-
                             </ul>
                         </div>
                     }
@@ -50,7 +45,6 @@ export default class StoreUpdate extends Component {
                     </Modal.Actions>
                 </Modal>
             </React.Fragment>
-
         )
     }
 }

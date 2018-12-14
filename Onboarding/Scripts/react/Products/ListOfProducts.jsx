@@ -36,12 +36,9 @@ export default class ProductTable extends Component {
         this.onUpdateSubmit = this.onUpdateSubmit.bind(this);
     }
 
-
-
     componentDidMount() {
         this.loadData();
     }
-
 
     closeDeleteModal() {
         this.setState({ showDeleteModal: false });
@@ -67,7 +64,6 @@ export default class ProductTable extends Component {
         });
     }
 
-
     onDeleteSubmit(id) {
         $.ajax({
             url: "/Products/DeleteProduct",
@@ -92,7 +88,6 @@ export default class ProductTable extends Component {
                         modelErrors = [...data];
                         let errors = {};
                         modelErrors.forEach(function (error, index) {
-                            console.log(index);
                             if (error.includes('Name')) {
                                 console.log(typeof error)
                                 errors['Name'] = error;
@@ -115,8 +110,6 @@ export default class ProductTable extends Component {
     }
 
     onUpdateSubmit() {
-        console.log()
-        
             let data = { 'Name': this.state.Name, 'Price': this.state.Price, 'Id': this.state.Id };
             console.log(data);
             $.ajax({
@@ -129,13 +122,10 @@ export default class ProductTable extends Component {
                         modelErrors = [...data];
                         let errors = {};
                         modelErrors.forEach(function (error, index) {
-                            console.log(index);
                             if (error.includes('Name')) {
-                                console.log(typeof error)
                                 errors['Name'] = error;
                             }
                             if (error.includes('Price')) {
-                                console.log(typeof error)
                                 errors['Price'] = error;
                             }
                         });
@@ -149,9 +139,6 @@ export default class ProductTable extends Component {
                     }
                 }.bind(this)
             });
-            //window.location.reload();
-        
-
     }
 
     handleDelete(id) {
@@ -178,8 +165,6 @@ export default class ProductTable extends Component {
                 console.log(this.state.Price);
             }.bind(this)
         });
-
-
     }
 
 
@@ -197,16 +182,11 @@ export default class ProductTable extends Component {
                     <td className="four wide">
                         <Button className="ui red button" onClick={this.handleDelete.bind(this, product.Id)}><i className="trash icon"></i>Delete</Button>
                     </td>
-
                 </tr>
-
             )
-
         }
         return (
-
             <React.Fragment>
-
                 <div className="ui one column grid">
                     <div className="row"></div>
                     <div className="row"></div> 
@@ -232,10 +212,7 @@ export default class ProductTable extends Component {
                         </table>
                     </div>
                 </div>
-
-
             </React.Fragment>
-
         )
     }
 }

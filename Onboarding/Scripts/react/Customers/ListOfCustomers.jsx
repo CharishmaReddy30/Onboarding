@@ -38,12 +38,9 @@ export default class CustomerTable extends Component {
         this.onUpdateSubmit = this.onUpdateSubmit.bind(this);
     }
 
-
-
     componentDidMount() {
         this.loadData();
     }
-
 
     closeDeleteModal() {
         this.setState({ showDeleteModal: false });
@@ -80,10 +77,7 @@ export default class CustomerTable extends Component {
     }
 
     onCreateSubmit() {
-        console.log(this.state.errors)
-            console.log('Modal create', this.state.Name, this.state.Address);
-            let data = { 'Name': this.state.Name, 'Address': this.state.Address }
-            console.log(data);
+        let data = { 'Name': this.state.Name, 'Address': this.state.Address };
             $.ajax({
                 url: "/Customer/CreateCustomers",
                 type: "POST",
@@ -94,13 +88,10 @@ export default class CustomerTable extends Component {
                         modelErrors = [...data];
                         let errors = {};
                         modelErrors.forEach(function (error, index) {
-                            console.log(index);
                             if (error.includes('Name')) {
-                                console.log(typeof error)
                                 errors['Name'] = error;
                             }
                             if (error.includes('Address')) {
-                                console.log(typeof error)
                                 errors['Address'] = error;
                             }
                         });
@@ -129,13 +120,10 @@ export default class CustomerTable extends Component {
                     modelErrors = [...data];
                     let errors = {};
                     modelErrors.forEach(function (error, index) {
-                        console.log(index);
                         if (error.includes('Name')) {
-                            console.log(typeof error)
                             errors['Name'] = error;
                         }
                         if (error.includes('Address')) {
-                            console.log(typeof error)
                             errors['Address'] = error;
                         }
                     });
@@ -157,7 +145,6 @@ export default class CustomerTable extends Component {
     }
 
     handleCreate() {
-        console.log('Create clicked');
         this.setState({ showCreateModal: true });
     }
 
@@ -174,12 +161,7 @@ export default class CustomerTable extends Component {
                 this.setState({ Id: data.Id, Name: data.Name, Address: data.Address });
             }.bind(this)
         });
-        console.log(this.state.Name)
-
-
     }
-
-
 
     render() {
         
@@ -196,16 +178,11 @@ export default class CustomerTable extends Component {
                     <td className="four wide">
                         <Button className="ui red button" onClick={this.handleDelete.bind(this, customer.Id)}><i className="trash icon"></i>Delete</Button>
                     </td>
-
                 </tr>
-
             )
-
         }
         return (
-
             <React.Fragment>
-                
                 <div className="ui one column grid">
                     <div className="row"></div> 
                     <div className="row"></div> 
@@ -231,8 +208,6 @@ export default class CustomerTable extends Component {
                         </table>
                     </div>
                 </div>
-
-
             </React.Fragment>
 
         )

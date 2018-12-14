@@ -12,8 +12,8 @@ namespace Onboarding.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Address = c.String(),
+                        Name = c.String(nullable: false),
+                        Address = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -40,7 +40,7 @@ namespace Onboarding.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        Name = c.String(nullable: false),
                         Price = c.Double(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
@@ -50,8 +50,8 @@ namespace Onboarding.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Address = c.String(),
+                        Name = c.String(nullable: false),
+                        Address = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             

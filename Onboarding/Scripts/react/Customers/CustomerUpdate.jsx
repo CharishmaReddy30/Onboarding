@@ -6,11 +6,8 @@ export default class CustomerUpdate extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
         };
-        
     }
-    
     render() {
         return (
             <React.Fragment>
@@ -21,7 +18,7 @@ export default class CustomerUpdate extends Component {
                             <i className="close icon"></i>
                             <div className="header">
                                 There were some errors with your submission
-  </div>
+                            </div>
                             <ul className="list">
                                 {this.props.errors.Name && <li>{this.props.errors.Name}</li>}
 
@@ -35,10 +32,10 @@ export default class CustomerUpdate extends Component {
                     <Modal.Content>
                         <Form size="small">
                             <Form.Group>
-                                <Form.Input label='NAME' width={16} onChange={this.props.onChange} name="Name" defaultValue={this.props.name}/>
+                                <Form.Input label='NAME' width={16} onChange={this.props.onChange} name="Name" defaultValue={this.props.name} />
                             </Form.Group>
                             <Form.Group>
-                                <Form.Input label='ADDRESS' width={16} onChange={this.props.onChange} name="Address" defaultValue={this.props.address}/>
+                                <Form.Input label='ADDRESS' width={16} onChange={this.props.onChange} name="Address" defaultValue={this.props.address} />
                             </Form.Group>
                         </Form>
                     </Modal.Content>
@@ -50,7 +47,6 @@ export default class CustomerUpdate extends Component {
                     </Modal.Actions>
                 </Modal>
             </React.Fragment>
-
         )
     }
 }

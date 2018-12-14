@@ -14,12 +14,13 @@ export default class SaleUpdate extends Component {
         this.ProductsDropdown = this.ProductsDropdown.bind(this);
         this.StoresDropdown = this.StoresDropdown.bind(this);
     }
+
     componentDidMount() {
-        console.log('cre');
         this.CustomersDropdown();
         this.ProductsDropdown();
         this.StoresDropdown();
     }
+
     CustomersDropdown(){
     $.ajax({
         url: "/Customer/GetCustomers",
@@ -27,6 +28,7 @@ export default class SaleUpdate extends Component {
         success: function (data) { this.setState({ CustomerDropdownList: data }); }.bind(this)
         })
     }
+
     ProductsDropdown() {
         $.ajax({
             url: "/Products/GetProducts",
@@ -34,6 +36,7 @@ export default class SaleUpdate extends Component {
             success: function (data) { this.setState({ ProductDropdownList: data }); console.log(data) }.bind(this)
         });
     }
+
     StoresDropdown() {
         $.ajax({
             url: "/Stores/GetStores",
@@ -41,9 +44,6 @@ export default class SaleUpdate extends Component {
             success: function (data) { this.setState({ StoreDropdownList: data }) }.bind(this)
         });
     }
-
-    
-    
 
     render() {
         let list = this.state.CustomerDropdownList;
@@ -66,27 +66,19 @@ export default class SaleUpdate extends Component {
                             <i className="close icon"></i>
                             <div className="header">
                                 There were some errors with your submission
-  </div>
+                             </div>
                             <ul className="list">
                                 {this.props.errors.Datesold && <li>{this.props.errors.Datesold}</li>}
-
                             </ul>
-                            
-
                         </div>
                     }
-                    
                     <Modal.Content>
                         <Form size="small">
                             <Form.Group>
                                 <Form.Input label='Date sold' placeholder="dd/mm/yyyy" name="DateSold" defaultValue={this.props.DateSold} onChange={this.props.onChange} />
-                                
                             </Form.Group>
                             <Form.Group>
-
-                                <Dropdown placeholder='Select Customer' fluid selection options={Customertemp} name="CustomerId" value={this.props.CustomerId} onChange={this.props.onChange}/>
-
-                                
+                                <Dropdown placeholder='Select Customer' fluid selection options={Customertemp} name="CustomerId" value={this.props.CustomerId} onChange={this.props.onChange}/>                                
                             </Form.Group>
                             <Form.Group>
                                 <Dropdown placeholder='Select Product' fluid selection options={Producttemp} name="ProductId" value={this.props.ProductId} onChange={this.props.onChange}/>
@@ -94,20 +86,14 @@ export default class SaleUpdate extends Component {
                             <Form.Group>
                                 <Dropdown placeholder='Select Store' fluid selection options={Storetemp} name="StoreId" value={this.props.StoreId} onChange={this.props.onChange}/>
                             </Form.Group>
-                            
-                            
                         </Form>
                     </Modal.Content>
-
-                    
                     <Modal.Actions>
                         <Button onClick={this.props.onClose} secondary >cancel</Button>
                         <Button onClick={this.props.onUpdateSubmit} className="ui green button">edit  <i className="check icon"></i></Button>
-
                     </Modal.Actions>
                 </Modal>
             </React.Fragment>
-
         )
     }
 }
